@@ -1,0 +1,35 @@
+extends ../layout
+
+block content
+	h1 Contas
+	a(href="/contas/create", class="btn btn-success") Cadastrar
+	br
+	br
+	if lista.length > 0
+		table(class="table table-striped")
+			thead
+				tr
+					th ID:
+					th Descrição da Conta:
+					th Preço:
+					th Excluir
+					th Editar
+			tbody
+				each valor in lista
+					tr
+						td #{valor._id}
+						td #{valor.conta}
+						td #{valor.preco}
+						td 
+							form(method="post", action="/contas/delete/#{valor._id}", class="frmDel")
+									button(type="subimit", class="btn btn-danger")
+										span(class="glyphicon glyphicon-minus")
+							//- a(href="/contas/delete/#{valor._id}", class="btn btn-danger")
+							//- 	span(class="glyphicon glyphicon-remove")
+							//- span &nbsp;
+						td
+							a(href="/contas/edit/#{valor._id}", class="btn btn-primary")
+								span(class="glyphicon glyphicon-pencil")
+	else
+		p Nenhum registro encontrado!
+	

@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+	h1 Cadastrar Nova Categoria
+	hr
+	br
+	form(method="POST", action="/categorias/create", role="form")
+		div(class="form-group")
+			label Categoria
+			input(type="text", class="form-control" name="conta", placeholder="Descrição da Conta")
+		button(type="submit", class="btn btn-success") Salvar

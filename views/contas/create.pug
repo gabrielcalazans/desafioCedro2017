@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+	h1 Cadastrar Nova Conta
+	hr
+	br
+	form(method="POST", action="/contas/create", role="form")
+		div(class="form-group")
+			label Descrição da Conta
+			input(type="text", class="form-control" name="conta", placeholder="Descrição da Conta")
+		div(class="form-group")
+			label Preço
+			input(type="text", class="form-control" name="preco", placeholder="Preço")
+		button(type="submit", class="btn btn-success") Salvar

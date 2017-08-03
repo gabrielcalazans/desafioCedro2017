@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+	h1 Atualizar conta
+	hr
+	br
+	form(method="POST", action="/contas/edit/#{dados._id}", role="form")
+		div(class="form-group")
+			label Descrição da Conta
+			input(type="text", class="form-control" name="conta", placeholder="Descrição da Conta", value="{dados.conta}")
+		div(class="form-group")
+			label Preço
+			input(type="text", class="form-control" name="preco", placeholder="Preço", value="{dados.preco}")
+		button(type="submit", class="btn btn-success") Salvar
